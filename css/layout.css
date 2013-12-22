@@ -5,6 +5,26 @@ body
 
 .logo
 {
-  margin: auto auto 40px;
-  width: 320px;
+  margin: auto auto 20px;
+  width: 400px;
+}
+.logo img
+{
+  width: 400px;
+  height: 400px;
+}
+
+.name
+{
+  font: 2em/1.25 bold 'Open Sans', sans-serif;
+  color: #830023;
+  text-align: center;
+  display: block;
+  margin: 20px 0 0;
+  text-shadow: 1px 1px 1px #544C4D;
+}
+.name small
+{
+  font-size: 0.6em;
+  display: block;
 }
