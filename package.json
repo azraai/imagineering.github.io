@@ -1,0 +1,18 @@
+{
+  "name": "imagineering.my",
+  "version": "0.0.1",
+  "dependencies": {
+    "grunt-contrib-less": "*"
+  },
+  "devDependencies": {
+    "grunt": "~0.4",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-exec": "*",
+    "bower": "~0.10"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
