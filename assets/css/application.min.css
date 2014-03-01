@@ -5798,19 +5798,24 @@ button.close {
 .navbar {
   border: none;
 }
+.navbar a.navbar-brand {
+  font: 700 24px/1 'Josefin Slab';
+  text-transform: lowercase;
+  background: url(/assets/img/logo-1-500.png) no-repeat 5px center;
+  background-size: 46px;
+  padding-left: 60px;
+}
 #masthead {
   font: 700 32px/1 'Josefin Slab';
   color: rgba(255, 255, 255, 0.8);
   padding: 200px 0 50px;
   text-align: center;
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .navbar {
     margin-bottom: 60px;
   }
   .navbar a.navbar-brand {
-    font: 700 24px/1 'Josefin Slab';
-    text-transform: lowercase;
     background: url(/assets/img/logo-1-500.png) no-repeat center left;
     background-size: 120px;
     width: 500px;

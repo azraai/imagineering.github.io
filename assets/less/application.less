@@ -34,6 +34,15 @@
 .navbar
 {
   border: none;
+
+  a.navbar-brand
+  {
+    font: 700 24px/1 'Josefin Slab';
+    text-transform: lowercase;
+    background: url(/assets/img/logo-1-500.png) no-repeat 5px center;
+    background-size: 46px;
+    padding-left: 60px;
+  }
 }
 
 #masthead
@@ -44,18 +53,13 @@
   text-align: center;
 }
 
-@media (min-width: @screen-sm-min) { }
+@media (min-width: @screen-sm-min) {}
 
-@media (min-width: @screen-md-min) { }
-
-@media (min-width: @screen-lg-min)
-{
+@media (min-width: @screen-md-min) {
   .navbar
   {
     a.navbar-brand
     {
-      font: 700 24px/1 'Josefin Slab';
-      text-transform: lowercase;
       background: url(/assets/img/logo-1-500.png) no-repeat center left;
       background-size: 120px;
       width: 500px;
@@ -67,3 +71,5 @@
     margin-bottom: 60px;
   }
 }
+
+@media (min-width: @screen-lg-min) { }
