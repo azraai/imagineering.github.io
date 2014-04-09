@@ -1,4 +1,15 @@
 @import "../../bower_components/bootstrap/less/bootstrap.less";
+@import "../../bower_components/font-awesome/less/font-awesome.less";
+
+a
+{
+  color: rgba(233, 8, 29, 1);
+
+  &:hover
+  {
+    color: #fff;
+  }
+}
 
 .background
 {
@@ -31,45 +42,69 @@
   padding-top: 60px;
 }
 
-.navbar
+.logo
 {
-  border: none;
-
-  a.navbar-brand
-  {
-    font: 700 24px/1 'Josefin Slab';
-    text-transform: lowercase;
-    background: url(/assets/img/logo-1-500.png) no-repeat 5px center;
-    background-size: 46px;
-    padding-left: 60px;
-  }
+  text-indent: -9999px;
+  background: url(/assets/img/logo-1-500.png) no-repeat center;
+  background-size: 180px;
+  display: block;
+  width: 180px;
+  height: 180px;
+  margin: auto auto 20px;
 }
 
-#masthead
+#nav-main
 {
-  font: 700 32px/1 'Josefin Slab';
-  color: rgba(255, 255, 255, 0.8);
-  padding: 200px 0 50px;
-  text-align: center;
-}
+  text-align: right;
+  margin-bottom: 10px;
 
-@media (min-width: @screen-sm-min) {}
-
-@media (min-width: @screen-md-min) {
-  .navbar
+  li
   {
-    a.navbar-brand
+    a
     {
-      background: url(/assets/img/logo-1-500.png) no-repeat center left;
-      background-size: 120px;
-      width: 500px;
-      height: 120px;
-      margin: -35px 0 -45px -32px !important;
-      padding: 48px 0 0 130px;
+      color: rgba(111, 0, 27, 1);
+      background: rgba(238, 238, 238, 0.5);
+      margin-bottom: 1px;
     }
 
-    margin-bottom: 60px;
+    &.active
+    {
+      a
+      {
+        color: #fff;
+        background: rgba(233, 8, 29, 0.5);
+      }
+    }
   }
 }
 
-@media (min-width: @screen-lg-min) { }
+#nav-social
+{
+  list-style: none;
+  margin-bottom: 10px;
+  clear: both;
+
+  li
+  {
+    float: right;
+    margin-left: 10px;
+
+    a
+    {
+      color: #fff;
+
+      &:hover
+      {
+        color: rgba(233, 8, 29, 1);
+      }
+    }
+  }
+}
+
+#copyright
+{
+  color: #fff;
+  font-weight: bold;
+  font-size: 11px;
+  color: #fff;
+}
