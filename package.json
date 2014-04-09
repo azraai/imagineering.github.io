@@ -9,6 +9,8 @@
     "grunt-contrib-watch": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-copy": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-cssmin": "*",
     "grunt-exec": "*",
     "bower": "~0.10"
   },

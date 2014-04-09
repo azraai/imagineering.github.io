@@ -7,20 +7,30 @@ module.exports = function(grunt) {
           yuicompress: true
         },
         files: {
-          "assets/css/application.min.css": "assets/less/application.less"
+          "assets/css/app.css": "assets/less/application.less"
         }
       }
     },
-    uglify: {
-      jquery: {
-        files: {
-          'assets/js/jquery.min.js': 'bower_components/jquery/jquery.js'
-        }
+    concat: {
+      options: {
+        separator: ';',
       },
-      bootstrap: {
+      dist: {
+        src: ['bower_components/jquery/jquery.js', 'bower_components/bootstrap/dist/js/bootstrap.js', 'assets/js/application.js'],
+        dest: 'assets/js/app.js',
+      },
+    },
+    uglify: {
+      production: {
         files: {
-          'assets/js/bootstrap.min.js': 'bower_components/bootstrap/dist/js/bootstrap.js'
+          "assets/js/app.min.js": "assets/js/app.js"
         }
+      }
+    },
+    cssmin: {
+      minify: {
+        src: "assets/css/app.css",
+        dest: "assets/css/app.min.css"
       }
     },
     copy: {
@@ -28,7 +38,12 @@ module.exports = function(grunt) {
         files: [
           {expand: true, cwd: 'bower_components/bootstrap/img/', src: ['**'], dest: 'assets/img/'}
         ]
-      }
+      },
+      'font-awesome': {
+        files: [
+          {expand: true, cwd: 'bower_components/font-awesome/fonts/', src: ['**'], dest: 'assets/fonts/'}
+        ]
+      },
     },
     exec: {
       build: {
@@ -39,17 +54,29 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: "**/*.less",
-      tasks: ['less']
+      less: {
+        files: "**/*.less",
+        tasks: ['less']
+      },
+      js: {
+        files: "assets/js/app.js",
+        tasks: ['concat', 'uglify']
+      },
+      css: {
+        files: "assets/css/app.css",
+        tasks: ['cssmin']
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('default', [ 'less', 'uglify', 'copy', 'exec:build' ]);
+  grunt.registerTask('default', [ 'less', 'concat', 'uglify', 'cssmin', 'copy', 'exec:build' ]);
   grunt.registerTask('deploy', [ 'default', 'exec:deploy' ]);
 };
