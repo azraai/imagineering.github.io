@@ -2,3 +2,4 @@ exclude: ['less', 'bower_components', 'node_modules', 'bower.json', 'Gruntfile.j
 timezone: Asia/Kuala_Lumpur
 name: Imagineering Institute
 permalink: pretty
+markdown: kramdown
