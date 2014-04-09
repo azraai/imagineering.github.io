@@ -3,6 +3,10 @@
 <head>
 <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:site_name" content="Imagineering Institute">
+<meta property="og:title" content="{% if page.masthead.title %}{{ page.masthead.title }}{% else %}{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}{% endif %}">
+<meta property="og:image" content="http://imagineering.my/assets/img/logo-1-500.png">
+<meta property="og:type" content="{% if page.url == '/' %}website{% else %}article{% endif %}">
 <link href="//fonts.googleapis.com/css?family=Josefin+Slab:400,600,700" rel="stylesheet" type="text/css">
 <link href="/assets/css/app.min.css" rel="stylesheet" media="screen">
 </head>
